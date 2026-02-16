@@ -1,0 +1,79 @@
+.sidebar {
+  width: 270px;
+  height: 100vh;
+  background: #ffffff;
+  position: sticky;
+  left: 0;
+  top: 0;
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #f1f1f1;
+}
+
+.logo {
+  margin-bottom: 50px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff6ec4;
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 1px;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+
+  span {
+    font-size: 18px;
+  }
+
+  &:hover {
+    background: #f9f9ff;
+    transform: translateX(6px);
+    color: #ff6ec4;
+  }
+}
+
+/* Активная ссылка */
+.active {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 110, 196, 0.25);
+}
+
+/* красивый индикатор слева */
+.active::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  background: linear-gradient(180deg, #ff6ec4, #7873f5);
+  border-radius: 0 10px 10px 0;
+}

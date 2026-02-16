@@ -1,0 +1,199 @@
+/* ----------------- RESET ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* ----------------- FLEX UTILITY ----------------- */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------- LINKS ----------------- */
+a {
+  color: inherit;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ----------------- BUTTONS ----------------- */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ----------------- INPUTS ----------------- */
+input,
+textarea {
+  font-family: inherit;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: 0.3s;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ff6fa5;
+  box-shadow: 0 0 10px rgba(255, 111, 165, 0.3);
+}
+
+/* ----------------- IMAGES ----------------- */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ----------------- TEXT ----------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* ----------------- CARD ----------------- */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ----------------- HEADER ----------------- */
+header {
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9ecb, #ffc1e3, #ffd6ec);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+header nav a {
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+header nav a.active {
+  color: #ff4da6;
+  text-shadow: 0 0 10px rgba(255, 111, 165, 0.6);
+}
+
+/* ----------------- FOOTER ----------------- */
+footer {
+  width: 100%;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #ff9ecb, #ffc1e3, #ffd6ec);
+  color: #fff;
+  text-align: center;
+}
+
+footer p,
+footer a {
+  opacity: 1;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  header nav a {
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+}

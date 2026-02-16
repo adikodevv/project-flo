@@ -1,0 +1,129 @@
+.login {
+  width: 420px;
+  margin: 80px auto;
+  padding: 50px 40px;
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(255, 105, 180, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+
+  animation: fadeIn 1s ease forwards;
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff4fa3, #9b5cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideDown 0.8s ease;
+  }
+
+  h3 {
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease;
+  }
+
+  input {
+    padding: 16px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    outline: none;
+    font-size: 16px;
+    background: #f8f8f8;
+    transition: all 0.4s ease;
+
+    &:focus {
+      border: 2px solid #ff4fa3;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      transform: scale(1.03);
+    }
+
+    &:hover {
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+    }
+  }
+
+  button {
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+
+    background: linear-gradient(90deg, #ff4fa3, #9b5cff);
+    color: white;
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+
+    &:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(155, 92, 255, 0.4);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a button {
+    background: none;
+    color: #ff4fa3;
+    box-shadow: none;
+    font-weight: 400;
+
+    span {
+      font-weight: 600;
+      color: #9b5cff;
+      transition: 0.3s;
+    }
+
+    &:hover span {
+      text-decoration: underline;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+/* Анимации */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Фоновый цвет страницы для цветочного настроения */
+body {
+  background: linear-gradient(135deg, #ffe6f0, #f3e8ff);
+  min-height: 100vh;
+}
