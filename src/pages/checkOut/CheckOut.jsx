@@ -4,8 +4,8 @@ import { useMain } from "../../context/MainContext";
 import scss from "./CheckOut.module.scss";
 import { addOrderToStorage, generateOrderId } from "../../utils/orderStorage";
 
-const TELEGRAM_BOT_TOKEN = "8374129347:AAF1kqfvzmr7YTU58crtvJ98XeHrxlwE7RE";
-const TELEGRAM_CHAT_ID = "1384153865";
+const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
 const defaultForm = {
   name: "",

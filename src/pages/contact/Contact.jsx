@@ -2,8 +2,8 @@
 import scss from "./Contact.module.scss";
 import { useMain } from "../../context/MainContext";
 
-const TELEGRAM_BOT_TOKEN = "8454470549:AAHzwIPIqrLNXAtlaajf_3mHHcY_7widXmk";
-const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID";
+const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
 const CONTACT_BENEFIT_KEYS = [
   "contact_benefit_1",
@@ -76,6 +76,11 @@ const Contact = () => {
   }, [charIndex, phraseIndex, phrases]);
 
   const sendTelegramMessage = async () => {
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+      alert(t("checkout_telegram_config_error"));
+      return;
+    }
+
     const message = `${t("contact_msg_new_request")} Floriva:\n${t("contact_msg_name")}: ${t("contact_msg_visitor")}\n${t("contact_msg_phone")}: +996 702 126 311\n${t("contact_msg_email")}: info@floriva.kg`;
 
     try {

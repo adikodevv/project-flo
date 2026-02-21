@@ -14,3 +14,28 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Deploy to Vercel
+
+Project is prepared for Vercel with `vercel.json`:
+
+- Framework preset: `vite`
+- Build command: `npm run build`
+- Output directory: `dist`
+- SPA fallback rewrite to `index.html` (for React Router routes)
+
+### Required environment variables
+
+Set these in Vercel Project Settings -> Environment Variables:
+
+- `VITE_TELEGRAM_BOT_TOKEN`
+- `VITE_TELEGRAM_CHAT_ID`
+
+Use `.env.example` as template for local setup.
+
+### Deploy steps
+
+1. Import the repository in Vercel.
+2. Set `Root Directory` to `myapp` if your repository root is one level above this app.
+3. Add required environment variables.
+4. Deploy.
