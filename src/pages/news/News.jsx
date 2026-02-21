@@ -1,7 +1,10 @@
 import React from "react";
+import { useMain } from "../../context/MainContext";
 
 const News = () => {
-  return <div>News</div>;
+  const { t } = useMain();
+
+  return <div>{t("page_news_title")}</div>;
 };
 
 export default News;

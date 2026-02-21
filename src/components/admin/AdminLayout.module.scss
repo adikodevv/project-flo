@@ -1,0 +1,25 @@
+.adminLayout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  background: #f8f9fd;
+}
+
+.content {
+  padding: 24px;
+  min-width: 0;
+}
+
+@media (max-width: 960px) {
+  .adminLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 16px;
+  }
+}
+
+:global(.dark) .adminLayout {
+  background: #0f121a;
+}

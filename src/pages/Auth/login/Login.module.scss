@@ -1,6 +1,15 @@
+.login_container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #ffe6f0, #f3e8ff);
+}
+
 .login {
   width: 420px;
-  margin: 80px auto;
+  margin: 0 auto;
   padding: 50px 40px;
   border-radius: 30px;
 
@@ -122,8 +131,99 @@
   }
 }
 
-/* Фоновый цвет страницы для цветочного настроения */
-body {
-  background: linear-gradient(135deg, #ffe6f0, #f3e8ff);
-  min-height: 100vh;
+:global(.dark) .login_container {
+  background: linear-gradient(180deg, #0f121a, #161f2d);
+}
+
+:global(.dark) .login {
+  background: rgba(24, 33, 50, 0.88);
+  border: 1px solid #324157;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
+}
+
+:global(.dark) .login h3 {
+  color: #b9c3d4;
+}
+
+:global(.dark) .login input {
+  background: #1d293b;
+  border-color: #324157;
+  color: #ecf1fb;
+}
+
+:global(.dark) .login input:hover {
+  background: #243348;
+}
+
+:global(.dark) .register_btn {
+  color: #ff9dd8;
+}
+
+:global(.dark) .register_btn span {
+  color: #c4b5fd;
+}
+
+@media (max-width: 768px) {
+  .login_container {
+    padding: 16px;
+  }
+
+  .login {
+    width: 100%;
+    max-width: 420px;
+    padding: 34px 22px;
+    border-radius: 22px;
+    gap: 16px;
+
+    h1 {
+      font-size: 34px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    input {
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 13px;
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .login {
+    padding: 26px 14px;
+    border-radius: 18px;
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 12px;
+      border-radius: 14px;
+      font-size: 14px;
+    }
+
+    a button {
+      font-size: 13px;
+      padding: 8px;
+    }
+  }
 }

@@ -1,16 +1,24 @@
-import { Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import ScrollToTop from "../layout/ScrollToTop/ScrollToTop";
 import AdminSidebar from "./SideBar";
 import AdminRoutes from "../../routes/AdminRoutes";
+import scss from "./AdminLayout.module.scss";
 
 const AdminLayout = () => {
+  const isAuth =
+    typeof window !== "undefined" && localStorage.getItem("isAuth") === "true";
+
+  if (!isAuth) {
+    return <Navigate to="/login" replace />;
+  }
+
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div className={scss.adminLayout}>
       <ScrollToTop />
 
       <AdminSidebar />
 
-      <main style={{ flexGrow: 1, padding: "20px" }}>
+      <main className={scss.content}>
         <AdminRoutes />
       </main>
     </div>

@@ -1,0 +1,112 @@
+.delivery {
+  padding: 4rem 2rem;
+  background: #fff7f3; // нежный цвет, как цветочный магазин
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #d94f6f;
+    font-family: "Segoe UI", sans-serif;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #f9c5d1;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 250px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease-out;
+    cursor: pointer;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .icon {
+      font-size: 3rem;
+      color: #f9a8b0;
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+
+    &:hover .icon {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #d94f6f;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+:global(.dark) .delivery {
+  background: linear-gradient(180deg, #0f121a, #161f2d);
+}
+
+:global(.dark) .delivery h2 {
+  color: #f2f6ff;
+}
+
+:global(.dark) .delivery h2::after {
+  background: #33445b;
+}
+
+:global(.dark) .delivery .card {
+  background: #182132;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+  border: 1px solid #2f3d52;
+}
+
+:global(.dark) .delivery .icon {
+  color: #ff9ed8;
+}
+
+:global(.dark) .delivery .card h3 {
+  color: #f1f5ff;
+}
+
+:global(.dark) .delivery .card p {
+  color: #b9c3d4;
+}

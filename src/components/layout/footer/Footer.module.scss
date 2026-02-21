@@ -107,14 +107,36 @@
     letter-spacing: 1px;
   }
 
-  a {
+  p {
+    opacity: 0.9;
+  }
+}
+
+.links a {
+  text-decoration: none;
+  color: white;
+}
+
+.navGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, auto));
+  gap: 12px 26px;
+}
+
+.navColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contacts a {
     text-decoration: none;
     color: white;
     transition: 0.3s;
     position: relative;
   }
 
-  a::after {
+.contacts a::after {
     content: "";
     position: absolute;
     width: 0%;
@@ -125,19 +147,14 @@
     transition: 0.3s;
   }
 
-  a:hover::after {
+.contacts a:hover::after {
     width: 100%;
   }
 
-  a:hover {
+.contacts a:hover {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
     transform: translateX(6px);
   }
-
-  p {
-    opacity: 0.9;
-  }
-}
 
 /* 🌹 Падающие лепестки */
 .petals {
@@ -219,4 +236,87 @@
   background: rgba(0, 0, 0, 0.15);
   font-size: 14px;
   letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    padding: 0 24px 50px;
+  }
+
+  .logoBlock {
+    max-width: 100%;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 70px;
+    padding-top: 52px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+    padding: 0 16px 38px;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .links,
+  .contacts {
+    align-items: center;
+    text-align: center;
+  }
+
+  .navGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .navColumn {
+    align-items: center;
+  }
+
+  .contacts a:hover {
+    transform: none;
+  }
+
+  .bottom {
+    padding: 18px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .petals {
+    display: none;
+  }
+
+  .logoBlock h2 {
+    font-size: 24px;
+  }
+
+  .logoBlock p {
+    font-size: 14px;
+  }
+
+  .links h4,
+  .contacts h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .socials a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
 }

@@ -2,41 +2,39 @@ import React, { useState } from "react";
 import scss from "./Register.module.scss";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useMain } from "../../../context/MainContext";
 
 const API_URL = "https://69653e01e8ce952ce1f49d37.mockapi.io/user";
 
 const Register = () => {
-  // 1. Создаем стейты для всех полей
+  const { t } = useMain();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
 
-  // 2. Функция регистрации
   const handleRegister = async () => {
-    // Простейшая валидация
     if (!name || !email || !password) {
-      return alert("Пожалуйста, заполните все поля!");
+      alert(t("register_alert_fill"));
+      return;
     }
 
     const newUser = {
       name,
       email,
       password,
-      createdAt: new Date().toISOString(), // Добавим дату для порядка
+      createdAt: new Date().toISOString(),
     };
 
     setLoading(true);
     try {
       await axios.post(API_URL, newUser);
-
-      alert("Регистрация прошла успешно!");
-      navigate("/login"); // После регистрации отправляем на логин
+      alert(t("register_alert_success"));
+      navigate("/login");
     } catch (error) {
-      console.error("Ошибка при регистрации:", error);
-      alert("Произошла ошибка при создании аккаунта.");
+      console.error("Register error:", error);
+      alert(t("register_alert_error"));
     } finally {
       setLoading(false);
     }
@@ -45,13 +43,13 @@ const Register = () => {
   return (
     <div className={scss.wrapper}>
       <div className={scss.card}>
-        <h1>Регистрация</h1>
+        <h1>{t("register_title")}</h1>
         <p className={scss.subtitle}>
-          {loading ? "Создаем аккаунт..." : "Создайте свой аккаунт"}
+          {loading ? t("register_subtitle_loading") : t("register_subtitle")}
         </p>
 
         <div className={scss.formGroup}>
-          <label>Полное имя</label>
+          <label>{t("register_full_name")}</label>
           <input
             type="text"
             placeholder="John Doe"
@@ -62,7 +60,7 @@ const Register = () => {
         </div>
 
         <div className={scss.formGroup}>
-          <label>Email</label>
+          <label>{t("register_email")}</label>
           <input
             type="email"
             placeholder="your@email.com"
@@ -73,10 +71,10 @@ const Register = () => {
         </div>
 
         <div className={scss.formGroup}>
-          <label>Пароль</label>
+          <label>{t("register_password")}</label>
           <input
             type="password"
-            placeholder="••••••••"
+            placeholder="********"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={loading}
@@ -88,11 +86,11 @@ const Register = () => {
           onClick={handleRegister}
           disabled={loading}
         >
-          {loading ? "Загрузка..." : "Зарегистрироваться"}
+          {loading ? t("register_button_loading") : t("register_button")}
         </button>
 
         <p className={scss.loginText}>
-          Уже есть аккаунт? <NavLink to="/login">Войти</NavLink>
+          {t("register_have_account")} <NavLink to="/login">{t("register_login_link")}</NavLink>
         </p>
       </div>
     </div>

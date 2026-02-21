@@ -220,3 +220,202 @@
     }
   }
 }
+
+:global(.dark) .about {
+  background: linear-gradient(180deg, #0f121a, #161f2d);
+  color: #edf2fb;
+}
+
+:global(.dark) .about .aboutContent p,
+:global(.dark) .about .tt p,
+:global(.dark) .about .s p,
+:global(.dark) .about .gh p,
+:global(.dark) .about .j p {
+  color: #b8c3d4;
+}
+
+:global(.dark) .about .hh,
+:global(.dark) .about .ab,
+:global(.dark) .about .l,
+:global(.dark) .about .qq,
+:global(.dark) .about .e {
+  background: rgba(24, 33, 50, 0.88);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.32),
+    inset 0 0 30px rgba(36, 50, 70, 0.7);
+}
+
+:global(.dark) .about .j h2 {
+  background: linear-gradient(90deg, rgba(80, 103, 143, 0.45), transparent);
+  color: #dce5f5;
+}
+
+@media (max-width: 1024px) {
+  .about .aboutContent {
+    padding: 110px 20px 60px;
+  }
+
+  .about .aboutContent h1 {
+    font-size: 48px;
+  }
+
+  .about .aboutContent p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .about .tt,
+  .about .s,
+  .about .gh {
+    margin: 90px auto 30px;
+  }
+
+  .about .hh,
+  .about .ab,
+  .about .l,
+  .about .qq,
+  .about .e {
+    margin: 30px auto 90px;
+    padding: 30px;
+    gap: 18px;
+  }
+
+  .about .hh img,
+  .about .ab img,
+  .about .l img,
+  .about .qq img,
+  .about .e img {
+    width: 220px;
+    height: 280px;
+  }
+
+  .about button {
+    margin: 90px auto;
+    padding: 16px 44px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about::before {
+    width: 420px;
+    height: 420px;
+    filter: blur(90px);
+  }
+
+  .about .aboutContent {
+    padding: 90px 16px 42px;
+  }
+
+  .about .aboutContent h1 {
+    font-size: 36px;
+    margin-bottom: 18px;
+  }
+
+  .about .aboutContent p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .about .tt,
+  .about .s,
+  .about .gh {
+    margin: 56px auto 20px;
+    padding: 0 10px;
+  }
+
+  .about .tt p,
+  .about .s p,
+  .about .gh p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .about .hh,
+  .about .ab,
+  .about .l,
+  .about .qq,
+  .about .e {
+    margin: 22px auto 60px;
+    padding: 18px;
+    border-radius: 20px;
+    gap: 12px;
+  }
+
+  .about .hh h2,
+  .about .ab h2,
+  .about .l h2,
+  .about .qq h2,
+  .about .e h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .about .hh img,
+  .about .ab img,
+  .about .l img,
+  .about .qq img,
+  .about .e img {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .about .j h2 {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .about .j p {
+    font-size: 15px;
+  }
+
+  .about button {
+    margin: 70px auto 50px;
+    padding: 14px 26px;
+    font-size: 17px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about .aboutContent h1 {
+    font-size: 30px;
+  }
+
+  .about .aboutContent p,
+  .about .tt p,
+  .about .s p,
+  .about .gh p {
+    font-size: 15px;
+  }
+
+  .about .hh h2,
+  .about .ab h2,
+  .about .l h2,
+  .about .qq h2,
+  .about .e h2 {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .about .hh img,
+  .about .ab img,
+  .about .l img,
+  .about .qq img,
+  .about .e img {
+    height: 200px;
+  }
+
+  .about .j h2 {
+    font-size: 16px;
+  }
+
+  .about button {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}

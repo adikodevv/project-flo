@@ -1,25 +1,19 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AdminPage from "../pages/admin/AdminPage";
 import AdminProducts from "../pages/admin/AdminProducts";
+import AdminOrders from "../pages/admin/AdminOrders";
+import AdminUsers from "../pages/admin/AdminUsers";
 
 const AdminRoutes = () => {
-  const routes = [
-    {
-      link: "/admin",
-      element: <AdminPage />,
-    },
-    {
-      link: "/admin/products", // Будет доступно по адресу /admin/products
-      element: <AdminProducts />,
-    },
-  ];
-
   return (
     <Routes>
-      {routes.map((item) => (
-        <Route key={item.link} path={item.link} element={item.element} />
-      ))}
+      <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
+      <Route path="/admin/dashboard" element={<AdminPage />} />
+      <Route path="/admin/products" element={<AdminProducts />} />
+      <Route path="/admin/orders" element={<AdminOrders />} />
+      <Route path="/admin/users" element={<AdminUsers />} />
+      <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
     </Routes>
   );
 };

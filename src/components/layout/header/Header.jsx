@@ -1,24 +1,19 @@
 import { NavLink } from "react-router-dom";
 import scss from "./Header.module.scss";
 import { useMain } from "../../../context/MainContext";
-import { useState, useEffect } from "react";
 
 const Header = () => {
-  const { cart, favorites, search, setSearch } = useMain();
-
-  // получаем сохраненную тему
-  const [dark, setDark] = useState(localStorage.getItem("theme") === "dark");
-
-  // применяем тему
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [dark]);
+  const {
+    cartCount,
+    favorites,
+    search,
+    setSearch,
+    language,
+    setLanguage,
+    isDark,
+    toggleTheme,
+    t,
+  } = useMain();
 
   return (
     <header className={scss.header}>
@@ -31,28 +26,28 @@ const Header = () => {
           to="/"
           className={({ isActive }) => (isActive ? scss.activeLink : "")}
         >
-          Главная
+          {t("header_home")}
         </NavLink>
 
         <NavLink
           to="/catalog"
           className={({ isActive }) => (isActive ? scss.activeLink : "")}
         >
-          Каталог
+          {t("header_catalog")}
         </NavLink>
 
         <NavLink
           to="/contact"
           className={({ isActive }) => (isActive ? scss.activeLink : "")}
         >
-          Контакты
+          {t("header_contacts")}
         </NavLink>
 
         <NavLink
           to="/login"
           className={({ isActive }) => (isActive ? scss.activeLink : "")}
         >
-          Войти
+          {t("header_login")}
         </NavLink>
       </nav>
 
@@ -60,17 +55,21 @@ const Header = () => {
         <div className={scss.searchBox}>
           <input
             type="text"
-            placeholder="Поиск цветов..."
+            placeholder={t("header_search_placeholder")}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
           <span>🔍</span>
         </div>
 
-        <select className={scss.language}>
-          <option>RU</option>
-          <option>EN</option>
-          <option>KG</option>
+        <select
+          className={scss.language}
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
+        >
+          <option value="RU">RU</option>
+          <option value="EN">EN</option>
+          <option value="KG">KG</option>
         </select>
 
         <NavLink to="/favorites">
@@ -85,14 +84,12 @@ const Header = () => {
         <NavLink to="/cart">
           <button className={scss.cart}>
             🛒
-            {cart.length > 0 && (
-              <span className={scss.badge}>{cart.length}</span>
-            )}
+            {cartCount > 0 && <span className={scss.badge}>{cartCount}</span>}
           </button>
         </NavLink>
 
-        <button className={scss.themeToggle} onClick={() => setDark(!dark)}>
-          {dark ? "☀️" : "🌙"}
+        <button className={scss.themeToggle} onClick={toggleTheme}>
+          {isDark ? "☀️" : "🌙"}
         </button>
       </div>
     </header>

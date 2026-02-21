@@ -18,6 +18,31 @@ body {
   background-color: #fff;
 }
 
+:root {
+  --app-bg: #ffffff;
+  --app-text: #333333;
+  --app-surface: #ffffff;
+  --app-surface-soft: #f3f5fb;
+  --app-border: #d6dce8;
+  --app-muted: #9aa3b2;
+  --app-accent: #ff79c6;
+}
+
+html.dark {
+  --app-bg: #0f121a;
+  --app-text: #e8ecf4;
+  --app-surface: #161c27;
+  --app-surface-soft: #1d2635;
+  --app-border: #2c3648;
+  --app-muted: #a9b3c4;
+  --app-accent: #ff8ece;
+}
+
+html.dark body {
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
 /* ----------------- FLEX UTILITY ----------------- */
 .flex {
   display: flex;
@@ -156,6 +181,95 @@ footer {
 footer p,
 footer a {
   opacity: 1;
+}
+
+/* ----------------- DARK MODE GLOBAL ----------------- */
+html.dark main,
+html.dark section,
+html.dark article,
+html.dark aside {
+  color: var(--app-text);
+}
+
+html.dark [class*="Page"],
+html.dark [class*="page"],
+html.dark [class*="wrap"],
+html.dark [class*="section"] {
+  color: var(--app-text);
+}
+
+html.dark [class*="card"],
+html.dark [class*="Card"],
+html.dark [class*="form"],
+html.dark [class*="Form"],
+html.dark [class*="container"],
+html.dark [class*="Container"],
+html.dark [class*="sidebar"],
+html.dark [class*="Sidebar"],
+html.dark [class*="summary"],
+html.dark [class*="Summary"],
+html.dark [class*="empty"],
+html.dark [class*="Empty"],
+html.dark [class*="item"],
+html.dark [class*="Item"],
+html.dark [class*="box"] {
+  background-color: var(--app-surface) !important;
+  border-color: var(--app-border) !important;
+  color: var(--app-text) !important;
+}
+
+html.dark main > [class*="catalogPage"],
+html.dark main > [class*="checkoutPage"],
+html.dark main > [class*="favoritesPage"],
+html.dark main > [class*="deliveryPage"],
+html.dark main > [class*="about"],
+html.dark main > [class*="contact"],
+html.dark main > [class*="home"],
+html.dark main > [class*="coman"],
+html.dark main > [class*="cart"] {
+  background: linear-gradient(180deg, #0f121a 0%, #151d2b 100%) !important;
+}
+
+html.dark [class*="footer"] {
+  background: linear-gradient(135deg, #1a2130, #1f2a3d, #232f45) !important;
+}
+
+html.dark [class*="header"] {
+  border-color: var(--app-border) !important;
+}
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background: var(--app-surface-soft) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: var(--app-muted) !important;
+}
+
+html.dark button {
+  border-color: var(--app-border);
+}
+
+html.dark a {
+  color: inherit;
+}
+
+html.dark a:hover {
+  color: var(--app-accent);
+  opacity: 1;
+}
+
+html.dark hr {
+  border-color: var(--app-border);
+}
+
+html.dark img {
+  filter: brightness(0.9) contrast(1.08);
 }
 
 /* ----------------- RESPONSIVE ----------------- */

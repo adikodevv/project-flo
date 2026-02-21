@@ -219,3 +219,200 @@
     }
   }
 }
+
+:global(.dark) #coman {
+  background: linear-gradient(180deg, #0f121a, #161f2d);
+  color: #edf2fb;
+}
+
+:global(.dark) #coman .coman p,
+:global(.dark) #coman .flo h2,
+:global(.dark) #coman .flo h3,
+:global(.dark) #coman .flo h4,
+:global(.dark) #coman .diz h2,
+:global(.dark) #coman .diz h3,
+:global(.dark) #coman .diz h4,
+:global(.dark) #coman .zi h2,
+:global(.dark) #coman .zi h3,
+:global(.dark) #coman .zi h4,
+:global(.dark) #coman .dev h2,
+:global(.dark) #coman .dev h3,
+:global(.dark) #coman .hh h2,
+:global(.dark) #coman .hh h3,
+:global(.dark) #coman .qw h2,
+:global(.dark) #coman .qw h3 {
+  color: #b8c3d4;
+}
+
+:global(.dark) #coman .flo,
+:global(.dark) #coman .diz,
+:global(.dark) #coman .zi {
+  background: rgba(24, 33, 50, 0.88);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.32),
+    inset 0 0 30px rgba(36, 50, 70, 0.7);
+}
+
+@media (max-width: 1024px) {
+  #coman {
+    padding: 48px 16px;
+  }
+
+  #coman .coman h1 {
+    font-size: 44px;
+  }
+
+  #coman .flo,
+  #coman .diz,
+  #coman .zi {
+    max-width: 820px;
+    margin: 50px auto;
+    padding: 30px;
+  }
+
+  #coman .flo img,
+  #coman .diz img,
+  #coman .zi img {
+    width: 260px;
+    height: 300px;
+  }
+
+  #coman .dev h1 {
+    font-size: 34px;
+  }
+
+  #coman .hh h1,
+  #coman .qw h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  #coman {
+    padding: 38px 12px;
+  }
+
+  #coman::before {
+    width: 360px;
+    height: 360px;
+    filter: blur(90px);
+  }
+
+  #coman .coman {
+    margin: 0 auto 36px;
+  }
+
+  #coman .coman h1 {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+
+  #coman .coman p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  #coman .coman h2 {
+    font-size: 20px;
+  }
+
+  #coman .flo,
+  #coman .diz,
+  #coman .zi {
+    margin: 26px auto;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  #coman .flo h1,
+  #coman .diz h1,
+  #coman .zi h1 {
+    font-size: 24px;
+  }
+
+  #coman .flo h2,
+  #coman .flo h3,
+  #coman .flo h4,
+  #coman .diz h2,
+  #coman .diz h3,
+  #coman .diz h4,
+  #coman .zi h2,
+  #coman .zi h3,
+  #coman .zi h4 {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  #coman .flo img,
+  #coman .diz img,
+  #coman .zi img {
+    width: 100%;
+    max-width: 310px;
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  #coman .dev {
+    margin: 42px auto;
+  }
+
+  #coman .dev h1 {
+    font-size: 28px;
+  }
+
+  #coman .dev h2,
+  #coman .dev h3 {
+    font-size: 16px;
+  }
+
+  #coman .hh,
+  #coman .qw {
+    margin: 40px auto;
+  }
+
+  #coman .hh h1,
+  #coman .qw h1 {
+    font-size: 26px;
+  }
+
+  #coman .hh h2,
+  #coman .hh h3,
+  #coman .qw h2,
+  #coman .qw h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #coman .coman h1 {
+    font-size: 28px;
+  }
+
+  #coman .flo h1,
+  #coman .diz h1,
+  #coman .zi h1 {
+    font-size: 21px;
+  }
+
+  #coman .flo img,
+  #coman .diz img,
+  #coman .zi img {
+    height: 200px;
+  }
+
+  #coman .dev h1 {
+    font-size: 24px;
+  }
+
+  #coman .hh h1,
+  #coman .qw h1 {
+    font-size: 22px;
+  }
+
+  #coman .hh h2,
+  #coman .hh h3,
+  #coman .qw h2,
+  #coman .qw h3 {
+    font-size: 15px;
+  }
+}

@@ -1,16 +1,17 @@
 .contact {
-  min-height: 100vh;
+  min-height: 100%;
   background: linear-gradient(135deg, #ffe6f0, #fff0f5, #ffe0ec);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 60px 20px;
-  overflow: hidden;
+  padding: 70px 20px 90px;
+  overflow: visible;
 }
 
 .container {
   text-align: center;
-  max-width: 800px;
+  max-width: 1080px;
+  width: 100%;
 }
 
 .title {
@@ -46,8 +47,9 @@
 .info {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 22px;
   flex-wrap: wrap;
+  margin-bottom: 34px;
 }
 
 .card {
@@ -56,6 +58,7 @@
   backdrop-filter: blur(10px);
   padding: 20px 30px;
   border-radius: 20px;
+  min-width: 220px;
   transition: 0.4s ease;
   cursor: pointer;
   overflow: hidden;
@@ -107,5 +110,340 @@
   100% {
     opacity: 0;
     transform: translateY(-60px) scale(1.2);
+  }
+}
+
+.benefits {
+  margin: 0 0 30px;
+
+  h2 {
+    margin: 0 0 14px;
+    color: #c2185b;
+    font-size: clamp(26px, 4vw, 34px);
+  }
+}
+
+.benefitList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.benefitChip {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #ffd1e6;
+  background: #fff;
+  color: #7f2956;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(214, 51, 132, 0.1);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.03);
+    border-color: #ff9dcc;
+    box-shadow: 0 10px 20px rgba(214, 51, 132, 0.18);
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.detailCard {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #ffd8e9;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(214, 51, 132, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: #ff9fcc;
+    box-shadow: 0 14px 30px rgba(214, 51, 132, 0.2);
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    color: #c2185b;
+    font-size: 20px;
+  }
+}
+
+.detailList {
+  margin: 0;
+  padding-left: 18px;
+  color: #6a1b4d;
+  display: grid;
+  gap: 8px;
+}
+
+.linkGroup {
+  display: grid;
+  gap: 8px;
+
+  a {
+    color: #7f2956;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #ffd8ea;
+    border-radius: 12px;
+    padding: 9px 12px;
+    background: #fff;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #ff8fc6;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.faq {
+  h2 {
+    margin: 0 0 14px;
+    color: #c2185b;
+    font-size: clamp(26px, 4vw, 34px);
+  }
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.faqItem {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #ffd8e9;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(214, 51, 132, 0.1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: #ff9fcc;
+    box-shadow: 0 14px 30px rgba(214, 51, 132, 0.2);
+  }
+
+  h4 {
+    margin: 0 0 8px;
+    color: #c2185b;
+    font-size: 17px;
+  }
+
+  p {
+    margin: 0;
+    color: #6a1b4d;
+    line-height: 1.55;
+  }
+}
+
+:global(.dark) .contact {
+  background: linear-gradient(180deg, #0f121a, #161f2d);
+}
+
+:global(.dark) .title {
+  color: #f1f6ff;
+}
+
+:global(.dark) .typeText {
+  color: #c9d4e6;
+  border-right-color: #8da3c9;
+}
+
+:global(.dark) .card {
+  background: rgba(24, 33, 50, 0.88);
+  border: 1px solid #2f3d52;
+}
+
+:global(.dark) .card h3 {
+  color: #e9effb;
+}
+
+:global(.dark) .card p {
+  color: #b8c3d4;
+}
+
+:global(.dark) .benefits h2,
+:global(.dark) .faq h2,
+:global(.dark) .detailCard h3,
+:global(.dark) .faqItem h4 {
+  color: #f1f6ff;
+}
+
+:global(.dark) .benefitChip {
+  background: #1a2536;
+  border-color: #33445d;
+  color: #d7e3f5;
+  box-shadow: none;
+}
+
+:global(.dark) .benefitChip:hover {
+  border-color: #5d7698;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.34);
+}
+
+:global(.dark) .detailCard,
+:global(.dark) .faqItem {
+  background: rgba(24, 33, 50, 0.88);
+  border-color: #2f3d52;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+:global(.dark) .detailCard:hover,
+:global(.dark) .faqItem:hover {
+  border-color: #5d7698;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.36);
+}
+
+:global(.dark) .detailList,
+:global(.dark) .faqItem p {
+  color: #b8c3d4;
+}
+
+:global(.dark) .linkGroup a {
+  background: #1a2536;
+  border-color: #33445d;
+  color: #d7e3f5;
+}
+
+:global(.dark) .linkGroup a:hover {
+  border-color: #ff8fcf;
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding: 56px 16px 72px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .typeText {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .info {
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .card {
+    min-width: 200px;
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 44px 12px 60px;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 14px;
+  }
+
+  .typeText {
+    font-size: 18px;
+    min-height: 26px;
+    margin-bottom: 24px;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .card {
+    min-width: 0;
+    width: 100%;
+    padding: 16px 14px;
+    border-radius: 16px;
+  }
+
+  .benefits h2,
+  .faq h2 {
+    font-size: 24px;
+  }
+
+  .benefitChip {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .detailsGrid,
+  .faqGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .detailCard,
+  .faqItem {
+    padding: 15px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 36px 10px 48px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .typeText {
+    font-size: 16px;
+    min-height: 22px;
+  }
+
+  .card h3 {
+    font-size: 17px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .detailCard h3 {
+    font-size: 18px;
+  }
+
+  .faqItem h4 {
+    font-size: 16px;
+  }
+
+  .detailList {
+    font-size: 14px;
+  }
+
+  .linkGroup a {
+    font-size: 14px;
+    padding: 8px 10px;
   }
 }
